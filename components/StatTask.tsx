@@ -6,7 +6,6 @@ const StatTask = () => {
 
     // Lecture des tâches dans le store 
     const todos = useSelector((state) => state.task)
-    console.log('todos' , todos)
   return (
     <View>
       <Text>StatTask</Text>

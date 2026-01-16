@@ -16,22 +16,25 @@ const FormAdd = () => {
     
     const addTodo = () => {
       
-        console.log()
-    } // End addTodo
-    
-
-    const newTodo = () => {
-      const newTodo = {
+      // Formatage de la tache
+    const newTodo = {
               id: Date.now().toString(),
               title: textTache,
               completed: false,
             };
 
+            // Enregistrement de la tache dans le store
             dispatch(ajouter(newTodo));
-            console.log('newTodo : ' , newTodo);
+
+            setTextTache('');
 
             // end addTodo
-    }
+    } // End addTodo
+    
+
+   
+      
+    
 
     
     return (

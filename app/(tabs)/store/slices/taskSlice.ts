@@ -2,23 +2,41 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const taskSlice = createSlice({
 
-    name:'task',
-    initialState : [],
-    reducers : {
-        ajouter:()=>{
-            console.log('ajouter une tâche')
-        
+    name: 'task',
+    initialState: [],
+    reducers: {
+        ajouter: (state, actions) => {
+            console.log('actions ajouter :', actions.payload)
+
+            // Création du nouveau state 
+
+            const newState = [...state, actions.payload]
+
+            // Mise à jour du state de Task
+            return newState;
+
         },
 
-        modifier:()=>{
-            console.log('modifier une tâche')
+        modifier: (state, actions) => {
+            //console.log('modifier une tâche')
+            const id = actions.payload
 
+            return state.map((item) =>
+                item.id === id ? { ...item, completed: !item.completed } : item
+            )
         },
-        supprimer:()=>{
-            console.log('supprimer une tâche')
+
+
+
+        supprimer: (state, actions) => {
+            console.log('supprimer la tâche : ', actions.payload)
+
+            const newState = state.filter(item => item.id != actions.payload)
+
+            return newState;
         },
     }
 });
 
-export const { ajouter, modifier, supprimer} = taskSlice.actions;
+export const { ajouter, modifier, supprimer } = taskSlice.actions;
 export default taskSlice.reducer
