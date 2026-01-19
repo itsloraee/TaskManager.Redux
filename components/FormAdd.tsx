@@ -1,5 +1,5 @@
-import { ajouter } from '@/app/(tabs)/store/slices/taskSlice'
 import { styles } from '@/app/(tabs)/styles'
+import { ajouter } from '@/app/store/slices/taskSlice'
 import React, { useState } from 'react'
 import { Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { useDispatch } from 'react-redux'

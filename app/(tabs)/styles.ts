@@ -99,4 +99,17 @@ import { StyleSheet } from "react-native";
         fontSize: 14,
         fontWeight: '500',
       },
+
+      swipeable: {
+    height: 50,
+    backgroundColor: 'papayawhip',
+    alignItems: 'center',
+    },
+
+    rightAction : {
+      backgroundColor:'red',
+      flexDirection:'row',
+      alignItems:'center',
+      justifyContent:'center'
+    }
     });

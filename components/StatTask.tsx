@@ -8,7 +8,7 @@ const StatTask = () => {
     const todos = useSelector((state) => state.task)
   return (
     <View>
-      <Text>StatTask</Text>
+      <Text></Text>
     </View>
   )
 }
